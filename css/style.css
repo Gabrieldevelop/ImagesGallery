@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500;600;700&display=swap');
+
+:root{
+    --blue: #14a1f0;
+    --primary-color:  #333;
+    --white: #fff;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Inconsolata', monospace;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    transition: all  0.5s ease;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 18px;
+}
+
+html::-webkit-scrollbar-track{
+    background: #eee;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--blue);
+}
+
+section{
+    min-height: 100vh;
+    padding: 80px 8%;
+}
+
+header .navbar #menu{
+    position: fixed;
+    top: 5%;
+    right: 3%;
+    font-size: 28px;
+    background: var(--blue);
+    padding: 10px;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 3;
+}
+
+header .navbar nav{
+    position: fixed;
+    top: 7%;
+    right: 4%;
+    border: 2px solid var(--blue);
+    background: #00000080;
+    transform-origin: top right;
+    transform: scale(0);
+    z-index: 2;
+}
+
+header .navbar nav.nav-toggle{
+    transform: scale(1);
+}
+
+header .navbar nav a{
+    display: block;
+    font-size: 20px;
+    color: var(--white);
+    padding: 15px 10px;
+    padding-right: 50px;
+}
+
+header .navbar nav a:hover{
+    transform: translateX(10px);
+    color: var(--blue);
+}
+
+.banner{
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.308),rgba(0, 0, 0, 0.308)), url(../images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: banner-change 55s ease infinite;
+}
+
+.banner .logo{
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    font-size: 25px;
+    color: var(--white);
+}
+
+.banner .logo span{
+    color: var(--blue);
+}
+
+.banner .bar{
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    width: 150px;
+    height: 2px;
+    background: var(--white);
+}
+
+.banner .content .title{
+    font-size: 50px;
+    margin: 30px 0;
+    color: var(--white);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.banner .content .title span{
+    color: var(--blue);
+}
+
+.banner .content .buscador{
+    width: 500px;
+    height: 40px;
+    margin: 0 50px;
+    text-align: center;
+}
+
+.banner .content .buscador #search{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0,.3);
+    color: var(--white);
+    font-size: 14px;
+}
+
+.banner .content .buscador #search:focus{
+    box-shadow: 0px 2px 5px var(--blue);
+}
+
+.banner .content .buscador #search::placeholder{
+    color: var(--white);
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.banner .content .buscador label{
+    position: absolute;
+    padding: 10px 20px;
+    margin: 0 3px;
+    height: 40px;
+    background: #00000080;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--blue);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.banner .down{
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    font-size: 40px; 
+    color: var(--blue);
+    animation-name: float;
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+}
+
+.gallery{
+    min-height: 100vh;
+    background: #f9f9f9;
+}
+
+.gallery .heading{
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: var(--primary-color);
+}
+
+.gallery .heading::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--blue);
+    margin: 10px;
+}
+
+.gallery .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.gallery .buttons .btn{
+    margin: 10px;
+    padding: 10px 25px;
+    background: var(--blue);
+    font-size: 18px;
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .buttons .btn.btn-active{
+    background: var(--primary-color);
+}
+
+.gallery .buttons .btn:hover{   
+    transform: rotate(5deg);
+}
+
+.gallery .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery .row .box{
+    flex: 1 1 300px;
+    margin: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .row .box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery .row .box:hover img{
+    transform: scale(1.2) rotate(10deg);
+}
+
+.gallery .row .box .download{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery .row .box .download .download-image{
+    font-size: 25px;
+    background: #00000080;
+    padding: 10px;
+    border-radius: 12px;
+    color: #14a1f0;
+}
+
+.gallery .row .box:hover .download{
+    top: 50%;
+}
+
+footer{
+    background: var(--primary-color);
+}
+
+footer .footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 4%;
+}
+
+footer .footer-content .box{
+    flex: 1 1 280px;
+    margin: 15px 10px;
+    text-align: center;
+}
+
+footer .footer-content .box .Logo{
+    font-size: 20px;
+    color: var(--white);
+}
+
+footer .footer-content .box .Logo span{
+    color: var(--blue);
+}
+
+footer .footer-content .box h3{
+    color: var(--white);
+    padding: 10px;
+    font-size: 20px;
+}
+
+footer .footer-content .box ul li{
+    list-style: none;
+    margin: 8px 0;
+}
+
+footer .footer-content .box ul li a{
+    color: #949191;
+}
+
+footer .footer-content .box ul li a:hover{
+    text-decoration: underline;
+}
+
+footer .footer-content .box .networks i{
+    font-size: 20px;
+    padding: 8px 10px;
+    color: var(--white);
+    border: 1px solid #949191;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+footer .footer-content .box .networks i:hover{
+    background: #00000080;
+}
+
+footer .footer-content .box .fa-upload{
+    color: var(--white);
+    font-size: 18px;
+}
+
+.footer-two{
+    padding: 10px;
+    background: rgba(255, 255, 255,0.5);
+    font-size: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+
+@keyframes float{
+    0%{
+        transform: translateY(0%);
+        color: var(--blue);
+    }
+    50%{
+        transform: translateY(20px);
+        opacity: 0.3;
+    }
+    100%{
+        transform: translateY(0%);
+        color: var(--blue);
+    }
+}
+
+@keyframes banner-change {
+    0%{
+        background: linear-gradient(rgba(0, 0, 0, 0.308),rgba(0, 0, 0, 0.308)), url(../images/banner.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    25%{
+        background: linear-gradient(rgba(0, 0, 0, 0.308),rgba(0, 0, 0, 0.308)), url(../images/banner1.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    50%{
+        background: linear-gradient(rgba(0, 0, 0, 0.308),rgba(0, 0, 0, 0.308)), url(../images/banner2.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    75%{
+        background: linear-gradient(rgba(0, 0, 0, 0.308),rgba(0, 0, 0, 0.308)), url(../images/banner3.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    100%{
+        background: linear-gradient(rgba(0, 0, 0, 0.308),rgba(0, 0, 0, 0.308)), url(../images/banner4.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+
+@media screen and (max-width: 683px){
+    .logo{
+        font-size: 20px;
+    }
+
+    .banner .content .title{
+        font-size: 35px;
+    }
+    
+    .banner .content .buscador{
+        display: none;
+    }
+
+    section{
+        padding: 80px 3%;
+    }
+
+}

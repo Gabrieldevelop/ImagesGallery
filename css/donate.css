@@ -1,0 +1,117 @@
+body{
+    background: linear-gradient(90deg, #eee , var(--primary-color));
+}
+
+.logo{
+    padding: 30px;
+    font-size: 30px;
+}
+
+.logo a{
+    color: var(--primary-color);
+}
+
+.logo a span{
+    color: var(--blue);
+}
+
+.donate{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 8%;
+}
+
+.donate .image{
+    flex: 1 1 300px;
+}
+
+.donate .image .message{
+    margin: 40px 0;
+}
+
+.donate .image .message p{
+    line-height: 28px;
+    letter-spacing: 1.5px;
+}
+
+.donate .image img{
+    width: 100%;
+}
+
+.donate .container{
+    flex: 1 1 300px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 0.8px solid #666;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0,.2);
+}
+
+.donate .container h3{
+    font-size: 25px;
+    color: #333;
+}
+
+.donate .container .box{
+    padding: 10px;
+    margin: 10px;
+}
+
+.donate .container .box button{
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    border: 1px solid #666; 
+    cursor: pointer;
+}
+
+.donate .container .box button:hover{
+    background: var(--blue);
+    color: #fff;
+}
+
+.donate .container .buttons{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin: 10px;
+}
+
+.donate .container .buttons .btn{
+    width: 100%;
+    height: 100%;
+    margin: 15px;
+    padding: 10px 18px;
+    background: #c7c1c1;
+    border-radius: 8px;
+    color: #333;
+    font-size: 18px;
+}
+
+.donate .container .buttons .btn:hover{
+    color: #fff;
+    background: var(--blue);
+    letter-spacing: 1px;
+}
+
+.donate .container .box input{
+    padding: 15px;
+    font-size: 15px;
+    border: 1.6px solid #666;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0,.2);
+}
+
+
+@media screen and (max-width: 238px) {
+    .donate .container h3{
+        font-size: 15px;
+    }
+    
+}
